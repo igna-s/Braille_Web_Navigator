@@ -34,8 +34,7 @@ While currently implemented as a web-based software simulation (HTML/Python), th
 ## 🛠️ Hardware Context
 
 - **Important**: This repository represents the software stack. In the final implementation, the HTML interface (`index.html`) is intended to be replaced or mapped to a physical hardware controller (e.g., Raspberry Pi or ESP32) driving a grid of piezoelectric actuators or solenoids.
-- **Green Area** (in diagrams): Represents the refreshable Braille Display (40 cells x 15 lines).
-- **Orange Area**: Represents physical buttons for navigation (D-Pad) and input keys.
+
 
 ## 🚀 Getting Started
 
@@ -62,17 +61,8 @@ While currently implemented as a web-based software simulation (HTML/Python), th
 * **templates/index.html**: The frontend simulation. Renders the grid visually using CSS and handles user clicks to simulate touching a physical device.
 * **Translation.jpeg**: Reference chart for the Spanish Braille system used in the project.
 
-## 🎨 Future Changes
-
-- [ ] **Hardware Integration**: Connect the Python backend to a microcontroller via Serial/UART to drive real actuators.
-- [ ] **Voice Synthesis**: Add TTS (Text-to-Speech) feedback for UI navigation.
-- [ ] **Improved Image Dithering**: Optimize the algorithm for converting complex images into tactile dots.
-- [ ] **Physical Case Design**: Create 3D printable STL files for the device housing.
 
 ## 📜 License
 
 This project is open source. Feel free to modify the code to adapt it to different Braille standards or hardware configurations.
 
-## 📜 License
-
-This project has no usage restrictions (Uses MIT or Apache libraries), except for the terms and conditions of the respective API providers. From my side, feel free to use and evolve it :D !
