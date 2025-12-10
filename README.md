@@ -19,6 +19,8 @@ While currently implemented as a web-based software simulation (HTML/Python), th
     <img src="https://img.shields.io/badge/Ver%20Video-▶-2d3748?style=for-the-badge&logo=youtube" alt="Video"/>
   </a>
 </p>
+
+
 ---
 
 ## ✨ Core Features
