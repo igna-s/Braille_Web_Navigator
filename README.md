@@ -9,7 +9,7 @@ While currently implemented as a web-based software simulation (HTML/Python), th
 ## 🖼️ Device Concept
 
 <p align="center">
-  <img src="Prototipe.png" alt="Device Concept" width="400"/>
+  <img src="Descriptive_Prototipe.png" alt="Device Concept" width="400"/>
 </p>
 
 ## 🎥 Demo
