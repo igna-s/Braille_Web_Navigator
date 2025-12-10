@@ -15,11 +15,10 @@ While currently implemented as a web-based software simulation (HTML/Python), th
 ## 🎥 Video Preview
 
 <p align="center">
-  <a href="https://github.com/igna-s/Braille_Web_Navigator/blob/main/Demo.mp4" target="_blank">
+  <a href="https://igna-s.github.io/Braille_Web_Navigator/Demo.mp4" target="_blank">
     <img src="https://img.shields.io/badge/Ver%20Video-▶-2d3748?style=for-the-badge&logo=youtube" alt="Video"/>
   </a>
 </p>
-
 ---
 
 ## ✨ Core Features
