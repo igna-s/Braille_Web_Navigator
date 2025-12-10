@@ -1,25 +1,22 @@
-# Interactive 3D AI Assistant
+# Braille Web Navigator
 
-Welcome to the **Interactive 3D AI Assistant**, a project that brings a conversational AI to life in a 3D environment. This application combines a powerful language model with a fully animated avatar, creating an engaging and interactive user experience. Speak to the avatar through your microphone, and it will listen, think, and respond to you using a custom-cloned voice, complete with real-time animations and 'lip-sync'.
+Welcome to the **Braille Web Navigator**, an accessible web browsing engine designed to bridge the digital gap for the visually impaired. This project simulates a tactile operating system, converting live web content, search results, and even images into a readable Braille matrix.
 
-The entire project is designed to be **concurrent**, highly customizable, **100% free**, and runs easily in a Google Colab notebook if you don´t have a graphic card , making it accessible from any web browser without local setup.
+While currently implemented as a web-based software simulation (HTML/Python), this architecture is designed to serve as the "brain" for a future physical tactile tablet device. The interface is designed to mimic a physical device with a 15x40 tactile pin matrix.
 
 ---
 
-## 🖼️ Avatar Preview (Mobile Device)
+## 🖼️ Device Concept
 
 <p align="center">
-  <img src="assets/image.png" alt="Avatar Preview" width="400"/>
+  <img src="Prototipe.png" alt="Device Concept" width="400"/>
 </p>
 
-## 🎥 Video Preview
+## 🎥 Demo
 
 <p align="center">
-  <!-- 
-    CORRECCIÓN: Se añadió "assets/" a la URL para que apunte a la carpeta correcta.
-  -->
-  <a href="https://igna-s.github.io/Realtime_Avatar_AI_Companion/assets/video_player.html" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/Ver%20Video-▶-2d3748?style=for-the-badge&logo=youtube" alt="Video"/>
+  <a href="Demo.mp4" target="_blank">
+    <img src="https://img.shields.io/badge/Watch%2520Demo--2d3748?style=for-the-badge&logo=youtube" alt="Video"/>
   </a>
 </p>
 
@@ -27,50 +24,53 @@ The entire project is designed to be **concurrent**, highly customizable, **100%
 
 ## ✨ Core Features
 
-- **🎤 Voice Interaction** Engage in seamless conversations. The assistant listens to your voice, transcribes it to text, and generates a spoken response.
-- **🧠 Conversational AI** Powered by the Google Gemini API, the assistant can hold natural, context-aware conversations and remember previous parts of your dialogue for a more personalized experience.
-- **🗣️ Custom Voice Cloning** Using OpenVoice, the assistant can clone the timbre of any voice from a reference audio file (`reference.mp3`), giving your character a unique vocal identity.
-- **💃 Interactive 3D Avatar** The frontend, built with Three.js, renders a custom `.vrm` avatar. The character features idle and talking animations, automatic blinking, and audio-driven lip-sync.
-- **🎨 Fully Customizable** Easily swap out the avatar (`.vrm`), animations (`.fbx`), 3D background (`.hdr`), reference voice (`.mp3`), and the AI’s personality to create your own unique assistant.
-- **🌐 Web-Accessible** Runs in a Google Colab notebook and uses Ngrok to generate a public URL, allowing you to access the assistant from your browser on any device.
+- **🔍 Live Web Search** Powered by DuckDuckGo and BeautifulSoup, the system scrapes the web and cleans up the UI, presenting only the essential text and navigable links.
+- **📝 Text-to-Braille Engine** A custom Python backend (`traductor.PY`) translates alphanumeric characters into Spanish Braille patterns in real-time, handling special characters, numbers, and capitalization prefixes.
+- **✋ Haptic Image Rendering** The system can process web images, resize them to a low-resolution grid (80x45), and convert them into binary Braille dot patterns, allowing users to "feel" images.
+- **⌨️ Input Simulation** Includes a virtual Braille keyboard with three modes: Lowercase (abc), Uppercase (ABC), and Numeric (123), mimicking the input method of the physical device.
+- **📄 Pagination & Navigation** Handles long web pages by splitting text into 40-character lines and managing page states (Next/Previous) automatically.
+
+## 🛠️ Hardware Context
+
+- **Important**: This repository represents the software stack. In the final implementation, the HTML interface (`index.html`) is intended to be replaced or mapped to a physical hardware controller (e.g., Raspberry Pi or ESP32) driving a grid of piezoelectric actuators or solenoids.
+- **Green Area** (in diagrams): Represents the refreshable Braille Display (40 cells x 15 lines).
+- **Orange Area**: Represents physical buttons for navigation (D-Pad) and input keys.
 
 ## 🚀 Getting Started
 
-1. **Gather Your Assets** Before you begin, you will need all the necessary 3D and audio files. You can use your own or download them from the recommended sources below.
-- **3D Avatar** (`waifu.vrm`)
-- **Animations** (`idle.fbx`, `anim_1.fbx`, `anim_2.fbx`, `anim_3.fbx`)
-- **3D Background** (`background.hdr`)
-- **Reference Voice** (`reference.mp3`)
-- **Web Client** (`cliente_final.html`)
+1. **Clone the Repository** Download the project files to your local machine.
 
-2. **Prepare Your Files** Create a single `.zip` file containing all the assets from the previous step. The Colab notebook will prompt you to upload this file.
-
-3. **Set Up the Environment** - Open the `main.ipynb` file in Google Colab.
-   - Run the **General Environment Setup** cells to install all required dependencies and libraries.
-
-4. **Configure Your Keys and Personality** In the **API Key, AI Personality & Language Configuration** cell, enter your keys:
-   ```python
-   GOOGLE_API_KEY = "<your_google_api_key>"
-   NGROK_AUTHTOKEN = "<your_ngrok_authtoken>"
+2. **Install Dependencies** You will need Python installed on your machine. Install the following Python libraries (based on imports in `traductor.PY`):
+   ```bash
+   pip install flask duckduckgo-search requests beautifulsoup4 pillow
    ```
-   Also customize the AI's personality by editing `SYSTEM_PROMPT_EN` or `SYSTEM_PROMPT_ES`.
-   Run the cell, and it will prompt you to upload the `.zip` file you created in Step 2.
 
-5. **Launch the Server** Run the final cell: **Run Web Server & Application**.
-   This will start the web server and generate a public Ngrok URL in the output. Open that URL in your browser to start interacting with your assistant!
+3. **Run the Server** Execute the main Python script to start the Flask backend:
+   ```bash
+   python traductor.PY
+   ```
 
-## 🔗 Asset Sources
+4. **Access the Interface** Open your web browser and navigate to the local address:
+   - **URL**: `http://127.0.0.1:5000/`
 
-* **VRM Models**: [VRoid Hub](https://hub.vroid.com/)
-* **3D Backgrounds (.hdr)**: [Poly Haven](https://polyhaven.com/)
-* **Animations (.fbx)**: [Mixamo](https://www.mixamo.com/)
-* **Online Viewer for Testing**: [VRM Viewer](https://vrm-viewer.glitch.me/)
+   You can now type into the virtual keyboard to search the web. Try commands like simple text searches or pasting a URL.
+
+## 📂 Project Structure
+
+* **traductor.PY**: The core backend. Handles the Flask server, Braille translation dictionary, web scraping logic, and image processing.
+* **templates/index.html**: The frontend simulation. Renders the grid visually using CSS and handles user clicks to simulate touching a physical device.
+* **Translation.jpeg**: Reference chart for the Spanish Braille system used in the project.
 
 ## 🎨 Future Changes
 
-- [ ] Add more animations
-- [ ] Improve lipsync
-- [ ] Face expressions
+- [ ] **Hardware Integration**: Connect the Python backend to a microcontroller via Serial/UART to drive real actuators.
+- [ ] **Voice Synthesis**: Add TTS (Text-to-Speech) feedback for UI navigation.
+- [ ] **Improved Image Dithering**: Optimize the algorithm for converting complex images into tactile dots.
+- [ ] **Physical Case Design**: Create 3D printable STL files for the device housing.
+
+## 📜 License
+
+This project is open source. Feel free to modify the code to adapt it to different Braille standards or hardware configurations.
 
 ## 📜 License
 
