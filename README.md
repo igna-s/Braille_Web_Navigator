@@ -12,11 +12,11 @@ While currently implemented as a web-based software simulation (HTML/Python), th
   <img src="Descriptive_Prototipe.png" alt="Device Concept" width="400"/>
 </p>
 
-## 🎥 Demo
+## 🎥 Video Preview
 
 <p align="center">
-  <a href="Demo.mp4" target="_blank">
-    <img src="https://img.shields.io/badge/Watch%2520Demo--2d3748?style=for-the-badge&logo=youtube" alt="Video"/>
+  <a href="https://github.com/igna-s/Braille_Web_Navigator/blob/main/Demo.mp4" target="_blank">
+    <img src="https://img.shields.io/badge/Ver%20Video-▶-2d3748?style=for-the-badge&logo=youtube" alt="Video"/>
   </a>
 </p>
 
